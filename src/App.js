@@ -55,8 +55,8 @@ class App extends Component {
 
         </div>
 
-        <div className="container">
-          <div className="row">
+        <div className="container-fluid">
+          <div className="row text-center">
             {this.state.cards.map(card => (
               <Card
                 id={card.id}
