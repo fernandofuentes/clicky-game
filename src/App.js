@@ -22,7 +22,18 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Title>StarWars Clicky Card Game</Title>
+        <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <Title><img src="http://unwrittenhosting.com/starwars-cards/star-wars-the-clicky-game-app.png"></img></Title>
+          </div>
+          <div class="col-6">
+            other
+          </div>
+        </div>
+        </div>
+        <div class="container-fluid">
+        <div class="row">
         {this.state.cards.map(card => (
           <Card
             removeCard={this.removeCard}
@@ -32,6 +43,8 @@ class App extends Component {
             image={card.image}
           />
         ))}
+      </div>
+    </div>
       </Wrapper>
     );
   }
