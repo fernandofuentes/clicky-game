@@ -1,0 +1,62 @@
+[{
+    "id": 1,
+    "name": "Storm Trooper",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-1.jpg",
+  },
+  {
+    "id": 2,
+    "name": "Rey",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-2.jpg",
+  },
+  {
+    "id": 3,
+    "name": "BB-8",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-3.jpg",
+  },
+  {
+    "id": 4,
+    "name": "Kylo Ren",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-4.jpg",
+  },
+  {
+    "id": 5,
+    "name": "Yodo",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-5.jpg",
+  },
+  {
+    "id": 6,
+    "name": "Darth Vader",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-6.jpg",
+  },
+  {
+    "id": 7,
+    "name": "Luke",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-7.jpg",
+  },
+  {
+    "id": 8,
+    "name": "Chewie",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-8.jpg",
+  },
+  {
+    "id": 9,
+    "name": "droids",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-9.jpg",
+  },
+  {
+    "id": 10,
+    "name": "Leia",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-10.jpg",
+  },
+  {
+    "id": 11,
+    "name": "Han Solo",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-11.jpg",
+  },
+  {
+    "id": 12,
+    "name": "Fernando",
+    "image": "http://unwrittenhosting.com/starwars-cards/card-12.jpg",
+  },
+
+]
