@@ -4,9 +4,12 @@ import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import cards from "./cards.json";
 import "./App.css";
+import Start from "./components/Start/Start";
+import Score from "./components/Score/Score";
+import HighScore from "./components/HighScore/HighScore";
 
 class App extends Component {
-  // Setting this.state.cards to the friends json array
+  // Setting this.state.cards to the cards json array
   state = {
     cards
   };
@@ -18,33 +21,61 @@ class App extends Component {
     this.setState({ cards });
   };
 
+
+
+
+
+
+
+
+
+
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <Wrapper>
-        <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <Title><img src="http://unwrittenhosting.com/starwars-cards/star-wars-the-clicky-game-app.png"></img></Title>
+        <div className="container">
+
+          <div className="row">
+            <div className="col-12 text-center">
+              <img src="http://unwrittenhosting.com/starwars-cards/star-wars-the-clicky-game-app.png"></img>
+            </div>
           </div>
-          <div class="col-6">
-            other
+          <div className="row main-bar">
+            <div className="col-12 col-md-4 col-sm-12 bsCol">
+              <Start />
+            </div>
+            <div className="col-12 col-md-4 col-sm-12 bsCol">
+              <Score Score={this.state.Score}/>
+            </div>
+            <div className="col-12 col-md-4 col-sm-12 bsCol">
+              <HighScore HighScore={this.state.HighScore}/>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="container">
+          <div className="row">
+            {this.state.cards.map(card => (
+              <Card
+                id={card.id}
+                key={card.id}
+                name={card.name}
+                image={card.image}
+              />
+            ))}
+          </div>
+          <div className="row">
+            <div className="col-12 text-center name">
+              <p>Fernando Fuentes</p>
+
+            </div>
+
           </div>
         </div>
-        </div>
-        <div class="container-fluid">
-        <div class="row">
-        {this.state.cards.map(card => (
-          <Card
-            removeCard={this.removeCard}
-            id={card.id}
-            key={card.id}
-            name={card.name}
-            image={card.image}
-          />
-        ))}
-      </div>
-    </div>
+
+
       </Wrapper>
     );
   }
