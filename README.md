@@ -9,7 +9,7 @@
 
 ### How to Play
 Click on the boxes and watch them shuffle!
-Can you click ever card without clicking the same one twice?
+Can you click every card without clicking the same one twice?
 
 ### Good Luck! And may the Force be with you!
 
