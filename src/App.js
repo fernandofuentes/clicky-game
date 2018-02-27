@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
 import cards from "./cards.json";
 import "./App.css";
 import Start from "./components/Start/Start";
@@ -9,19 +8,34 @@ import Score from "./components/Score/Score";
 import HighScore from "./components/HighScore/HighScore";
 
 class App extends Component {
-  // Setting this.state.cards to the cards json array
-  state = {
-    cards
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: [],
+      cards: cards,
+      Score: 0,
+      HighScore: 0
+    };
+    console.log(cards);
+  }
 
-  removeCard = id => {
-    // Filter this.state.Card for friends with an id not equal to the id being removed
-    const cards = this.state.cards.filter(card => card.id !== id);
-    // Set this.state.friends equal to the new cards array
-    this.setState({ cards });
-  };
+
+  // removeCard = id => {
+  //   // Filter this.state.Card for friends with an id not equal to the id being removed
+  //   const cards = this.state.cards.filter(card => card.id !== id);
+  //   // Set this.state.friends equal to the new cards array
+  //   this.setState({ cards });
+  // };
 
 
+    handlerClick = (event) => {
+        if (this.state.clicked.indexOf(event.id) < 0) {
+          this.setState({Score: this.state.Score + 1, HighScore: this.state.Score, clicked: this.state.clicked.concat([event.id])})
+          this.randomizer(cards)
+        } else {
+          this.setState({Score: 0})
+        }
+      }
 
 
 
@@ -47,6 +61,7 @@ class App extends Component {
             </div>
             <div className="col-12 col-md-4 col-sm-12 bsCol">
               <Score Score={this.state.Score}/>
+
             </div>
             <div className="col-12 col-md-4 col-sm-12 bsCol">
               <HighScore HighScore={this.state.HighScore}/>
