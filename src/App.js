@@ -13,36 +13,46 @@ class App extends Component {
     this.state = {
       clicked: [],
       cards: cards,
+      unselectedCards: cards,
       Score: 0,
       HighScore: 0
     };
     console.log(cards);
   }
 
-
-  // removeCard = id => {
-  //   // Filter this.state.Card for friends with an id not equal to the id being removed
-  //   const cards = this.state.cards.filter(card => card.id !== id);
-  //   // Set this.state.friends equal to the new cards array
-  //   this.setState({ cards });
-  // };
-
-
-    handlerClick = (event) => {
-        if (this.state.clicked.indexOf(event.id) < 0) {
-          this.setState({Score: this.state.Score + 1, HighScore: this.state.Score, clicked: this.state.clicked.concat([event.id])})
-          this.randomizer(cards)
-        } else {
-          this.setState({Score: 0})
+  // Shuffle Cards Array
+  shuffleArray = array => {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
         }
-      }
+    }
 
+    // Select Card - if else
+    selectCard = character => {
+        const findCard = this.state.unselectedCards.find(item => item.character === character);
 
+        if(findCard === undefined) {
+            // failure to select a new card
+            this.setState({
+                HighScore: this.state.HighScore + 1,
+                Score: 0,
+                cards: cards,
+                unselectedCards: cards
+            });
+        }
+        else {
+            // success to select a new card
+            const newCards = this.state.unselectedCards.filter(item => item.character !== character);
 
-
-
-
-
+            this.setState({
+                Score: this.state.Score + 1,
+                cards: cards,
+                unselectedCards: newCards
+            });
+        }
+        this.shuffleArray(cards);
+    };
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
