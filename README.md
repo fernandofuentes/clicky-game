@@ -13,4 +13,4 @@ Can you click ever card without clicking the same one twice?
 
 ### Good Luck! And may the Force be with you!
 
-![alt text](https://imgflip.com/i/13kc67)
+![alt text](https://i.imgflip.com/13kc67.jpg)
